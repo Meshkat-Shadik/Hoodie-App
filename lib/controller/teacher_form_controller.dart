@@ -10,7 +10,7 @@ class FormControllerTeacher {
 
   // Google App Script Web URL.
  // static const String URL = "https://script.google.com/macros/s/AKfycbwrdvDhJyVkwdl-EgB8g-adf0Lr9EVvNneKJuBGIex8lQ0UMxO3/exec";
-  static const String URL = "https://script.google.com/macros/s/AKfycbw2CPx5KLSN-E94u06hf1xReW4Cg6l9a14Gr5_Yx5t6s-KrLSY/exec";
+  static const String URL = "https://script.google.com/macros/s/AKfycbwrdvDhJyVkwdl-EgB8g-adf0Lr9EVvNneKJuBGIex8lQ0UMxO3/exec";
   static const STATUS_SUCCESS = "SUCCESS";
   Map<String, String> headers = {
     'Content-Type': 'application/json;charset=UTF-8',

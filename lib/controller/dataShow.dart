@@ -5,21 +5,25 @@ import 'package:http/http.dart' as http;
 import 'package:xl_sheet_crud_test/Model/getDataForm.dart';
 import 'package:xl_sheet_crud_test/Model/teacherForm.dart';
 
+const URLT =
+    "https://script.google.com/macros/s/AKfycbwrdvDhJyVkwdl-EgB8g-adf0Lr9EVvNneKJuBGIex8lQ0UMxO3/exec";
+const URLS =
+    "https://script.google.com/macros/s/AKfycbwrdvDhJyVkwdl-EgB8g-adf0Lr9EVvNneKJuBGIex8lQ0UMxO3/exec?cat=S";
 
-const URLT= "https://script.google.com/macros/s/AKfycbw2CPx5KLSN-E94u06hf1xReW4Cg6l9a14Gr5_Yx5t6s-KrLSY/exec";
-const URLS = "https://script.google.com/macros/s/AKfycbw2CPx5KLSN-E94u06hf1xReW4Cg6l9a14Gr5_Yx5t6s-KrLSY/exec?cat=S";
-class Fetching
-{
+class Fetching {
   Future<List<GetDataForm>> getFeedbackListS() async {
     return await http.get(URLS).then((response) {
       var jsonFeedback = convert.jsonDecode(response.body) as List;
       return jsonFeedback.map((json) => GetDataForm.fromJson(json)).toList();
     });
   }
+
   Future<List<FeedbackFormTeacher>> getFeedbackListT() async {
     return await http.get(URLT).then((response) {
       var jsonFeedback = convert.jsonDecode(response.body) as List;
-      return jsonFeedback.map((json) => FeedbackFormTeacher.fromJson(json)).toList();
+      return jsonFeedback
+          .map((json) => FeedbackFormTeacher.fromJson(json))
+          .toList();
     });
   }
 }
